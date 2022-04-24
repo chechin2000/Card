@@ -35,7 +35,7 @@ show.forEach(button => {
 	})
 })	
 
-borderNone.forEach(element => {
+option.forEach(element => {
 	element.addEventListener("mousemove",()=>{
 		img.style.animation = "move 2s linear forwards"	
 	})

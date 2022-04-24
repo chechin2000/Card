@@ -4,21 +4,22 @@ let option = document.querySelectorAll(".options")
 let borderNone = document.querySelectorAll(".desactive-border")
 let img = document.querySelector(".img-box")
 
-let active = false;
+let active = [false,false,false,false,false];
 
 show.forEach(button => {
 	button.addEventListener("click",()=>{
 		button.classList.add("active")
 		let validacion = button.classList.contains("active")
 		if (validacion) {
-			if (active == false) {
-				value(show)
+			value(show)
+			active2 = active[position];
+			if (active2 == false) {
 				const intervalo = setInterval(()=>{
 					hidden[position].style.display = "block"
 					show[position].style.transform = "rotateX(180deg)"
 					option[position].setAttribute("style","color: #000; opacity: 1;")
-					borderNone[position].setAttribute("style","border: none;")
-					active = true
+					borderNone[position].setAttribute("style","border: none; padding: none;")
+					active[position] = true
 				},150)
 				setTimeout(()=>{
 					clearInterval(intervalo)
@@ -28,12 +29,12 @@ show.forEach(button => {
 				show[position].style.transform = "rotateX(0deg)"
 				option[position].removeAttribute("style","color: #000; opacity: 1;")
 				borderNone[position].setAttribute("style","border-bottom: 1px solid #ccc;")
-				active = false;
+				active[position] = false;
 			}
 		}	
 		button.classList.remove("active")
 	})
-})	
+})		
 
 option.forEach(element => {
 	element.addEventListener("mousemove",()=>{

@@ -79,6 +79,7 @@ button {
 	display: flex;
 	width: 60%;
 	min-width: 490px;
+	min-height: 400px;
 	background: #fff;
 	border-radius: 25px;
 }
